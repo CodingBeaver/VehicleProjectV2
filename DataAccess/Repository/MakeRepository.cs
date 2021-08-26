@@ -66,14 +66,15 @@ namespace DataAccess.Repository
                 var added = Db.VehicleMakes.Add(newMake);
                 Console.WriteLine(added);
                 return added;
-            }
-            );
+            });
+
             await Db.SaveChangesAsync();
         }
 
         public async Task<IVehicleMake> Update(IVehicleMake updatedMake, Guid id)
         {
             var make = Db.VehicleMakes.Find(id);
+
             if (make != null)
             {
                 try

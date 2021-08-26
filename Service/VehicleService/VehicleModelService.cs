@@ -15,7 +15,7 @@ namespace Service.VehicleService
         public VehicleModelService(IMakeRepository makeRepo, IModelRepository modelRepo)
         {
            
-            this.ModelRepo = modelRepo;
+            ModelRepo = modelRepo;
         }
 
 

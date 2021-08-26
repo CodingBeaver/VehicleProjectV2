@@ -86,6 +86,7 @@ namespace DataAccess.Repository
         public async Task Add(IVehicleModel model)
         {
             ModelEntity newModel = Mapper.Map<ModelEntity>(model);
+
             var make = Db.VehicleMakes.Find(newModel.MakeId);
             if (make == null)
             {
@@ -93,7 +94,7 @@ namespace DataAccess.Repository
             }
 
             await Task.Run(() => {
-                //System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(newModel));
+
                 ModelEntity added = Db.VehicleModels.Add(newModel);
             }
             );
@@ -103,7 +104,7 @@ namespace DataAccess.Repository
         public Task<IVehicleModel> Update(IVehicleModel updatedModel, Guid id)
         {
             var model = Db.VehicleModels.Find(id);
-            System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(model));
+
             if (model != null)
             {
                 try

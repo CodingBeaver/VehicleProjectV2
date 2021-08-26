@@ -15,7 +15,7 @@ namespace Service.VehicleService
 
         public VehicleMakeService(IMakeRepository makeRepo)
         {
-            this.MakeRepo = makeRepo;
+            MakeRepo = makeRepo;
         }
 
         public async Task<List<IVehicleMake>> MakeGetAll(Filter filter, Sort sort, Paging paging)
